@@ -1,0 +1,170 @@
+/* ============================================================
+   Foyer design tokens.
+   Warm-neutral monochrome, one ember accent, hairline borders,
+   luminance stepping in the dark theme. Every color, radius and
+   spacing value in the app comes from here.
+
+   Light lives on :root. Dark is applied by [data-theme="dark"]
+   (set by src/lib/theme.ts). A prefers-color-scheme fallback covers
+   the frame before the toggle script paints data-theme.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --canvas: #f7f7f5;
+  --panel: #ffffff;
+  --sidebar: #f2f2ef;
+  --well: #f0f0ed;
+  --hover: rgba(0, 0, 0, 0.045);
+  --active: rgba(0, 0, 0, 0.08);
+
+  /* Ink */
+  --ink: #171717;
+  --ink-2: #6b6b6b;
+  --ink-3: #9a9a9a;
+  --ink-on-accent: #fffaf7;
+
+  /* Accent (ember), the only hue in the interface */
+  --accent: #d9532b;
+  --accent-hover: #c2451f;
+  --accent-soft: rgba(217, 83, 43, 0.1);
+  --accent-ring: 0 0 0 2px rgba(217, 83, 43, 0.35);
+
+  /* Borders */
+  --line: rgba(0, 0, 0, 0.08);
+  --line-strong: rgba(0, 0, 0, 0.14);
+  --ring: 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+  /* Semantic */
+  --danger: #b42318;
+  --ok: #2f7a4d;
+
+  /* Radii */
+  --r-1: 4px;
+  --r-2: 6px;
+  --r-3: 10px;
+
+  /* Elevation: a ring plus one soft shadow on floating panels only */
+  --float: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  /* Spacing, 4pt grid */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-12: 48px;
+
+  /* Type */
+  --font-ui: "Instrument Sans Variable", "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --fs-xs: 10.5px;
+  --fs-sm: 11.5px;
+  --fs-tree: 12.5px;
+  --fs-md: 13px;
+  --fs-lg: 15px;
+  --fs-xl: 20px;
+  --fs-2xl: 28px;
+
+  /* Layout */
+  --row-h: 26px;
+  --tab-h: 34px;
+  --header-h: 44px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --t-fast: 120ms;
+  --t-med: 160ms;
+  --t-slow: 200ms;
+
+  /* Rendered code (highlight.js palette, light) */
+  --hl-comment: #8a8a8a;
+  --hl-keyword: #7a3e9d;
+  --hl-string: #2e7d4f;
+  --hl-number: #b35a00;
+  --hl-title: #1f5fa8;
+  --hl-attr: #9a4a1e;
+  --hl-meta: #6b6b6b;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --canvas: #0e0e0f;
+  --panel: #151517;
+  --sidebar: #111113;
+  --well: #1a1a1d;
+  --hover: rgba(255, 255, 255, 0.05);
+  --active: rgba(255, 255, 255, 0.09);
+
+  --ink: #ececea;
+  --ink-2: #9b9b98;
+  --ink-3: #66666a;
+  --ink-on-accent: #1a0d08;
+
+  --accent: #f0704f;
+  --accent-hover: #ff8464;
+  --accent-soft: rgba(240, 112, 79, 0.14);
+  --accent-ring: 0 0 0 2px rgba(240, 112, 79, 0.4);
+
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.13);
+  --ring: 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  --danger: #f08a7f;
+  --ok: #6dc28f;
+
+  --float: 0 0 0 1px rgba(255, 255, 255, 0.09), 0 12px 32px rgba(0, 0, 0, 0.55);
+
+  --hl-comment: #75756f;
+  --hl-keyword: #c792ea;
+  --hl-string: #9ccc65;
+  --hl-number: #f2b96b;
+  --hl-title: #82aaff;
+  --hl-attr: #f0a67a;
+  --hl-meta: #9b9b98;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+
+    --canvas: #0e0e0f;
+    --panel: #151517;
+    --sidebar: #111113;
+    --well: #1a1a1d;
+    --hover: rgba(255, 255, 255, 0.05);
+    --active: rgba(255, 255, 255, 0.09);
+
+    --ink: #ececea;
+    --ink-2: #9b9b98;
+    --ink-3: #66666a;
+    --ink-on-accent: #1a0d08;
+
+    --accent: #f0704f;
+    --accent-hover: #ff8464;
+    --accent-soft: rgba(240, 112, 79, 0.14);
+    --accent-ring: 0 0 0 2px rgba(240, 112, 79, 0.4);
+
+    --line: rgba(255, 255, 255, 0.07);
+    --line-strong: rgba(255, 255, 255, 0.13);
+    --ring: 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+    --danger: #f08a7f;
+    --ok: #6dc28f;
+
+    --float: 0 0 0 1px rgba(255, 255, 255, 0.09), 0 12px 32px rgba(0, 0, 0, 0.55);
+
+    --hl-comment: #75756f;
+    --hl-keyword: #c792ea;
+    --hl-string: #9ccc65;
+    --hl-number: #f2b96b;
+    --hl-title: #82aaff;
+    --hl-attr: #f0a67a;
+    --hl-meta: #9b9b98;
+  }
+}

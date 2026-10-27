@@ -1,0 +1,28 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    {
+      "identifier": "core:window:allow-destroy",
+      "comment": "The frontend listens for the window close request so it can flush unsaved notes before the window goes. Once it has, Tauri needs destroy to finish closing the window."
+    },
+    "opener:default",
+    {
+      "identifier": "opener:allow-open-url",
+      "comment": "Lets the UI open a file or folder in VS Code via its vscode://file/<path> scheme, the same mechanism GitHub Desktop uses. Scoped to that one scheme: opener:default already covers http/https/mailto/tel, and nothing else should be launchable from the webview.",
+      "allow": [{ "url": "vscode://*" }]
+    },
+    {
+      "identifier": "opener:allow-reveal-item-in-dir",
+      "comment": "Show a file or folder selected in Explorer. Carries no path scope, so a mount under C:\\Github works the same as one under the home folder."
+    },
+    "dialog:default",
+    {
+      "identifier": "clipboard-manager:allow-write-text",
+      "comment": "Write-only clipboard for Copy path. Read stays ungranted; the app never needs to see the clipboard."
+    }
+  ]
+}
