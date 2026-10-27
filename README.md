@@ -1,14 +1,30 @@
 # Foyer
 
-A local viewing and launching layer for folders and repositories on this
-machine. Mount any folder, see every file in it the way VS Code's explorer
-does (dotfolders, gitignored files, every extension), preview Markdown, HTML,
-CSV and spreadsheets instantly, search by file name, and hand the folder or
-file to VS Code with one click. Markdown files can also be edited, so it
-doubles as a note taker.
+A companion app for people who run their wikis, knowledge bases and
+repositories through Claude Code, Codex or any other AI agent in the
+terminal.
+
+When an agent does the writing, you stop needing an editor and start
+needing a fast way to see what it wrote. That job usually takes two apps,
+Obsidian to read the notes and VS Code to browse the tree. Foyer merges
+them into one window built for reading and searching, so your terminal
+session stays the place you work and Foyer sits beside it:
+
+- Every file in the folder, the way VS Code's explorer shows it
+  (dotfolders, gitignored files, every extension).
+- Instant previews of Markdown, HTML, CSV, spreadsheets, images, PDFs,
+  video and audio.
+- File-name search across the whole folder, indexed in well under a
+  second on each open.
+- Live updates: the tree and the open note follow the agent's writes as
+  they land.
+- Markdown notes edit in place, with autosave that never overwrites a
+  file the agent changed under you. Anything else opens in VS Code with
+  one click.
 
 No server, no accounts, no sync, no network calls. The only files it writes
-are notes (`.md`, `.markdown`, `.mdx`) and folders.
+are notes (`.md`, `.markdown`, `.mdx`) and folders. Built and tested on
+Windows, and the installer is Windows-only for now.
 
 ## Build
 
